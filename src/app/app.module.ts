@@ -9,6 +9,12 @@ import { IncomeComponent } from './pages/income/income.component';
 import { ExpenseComponent } from './pages/expense/expense.component';
 import { ReportComponent } from './pages/report/report.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SidebarComponent } from './navigation/sidebar/sidebar.component';
+import { NavbarComponent } from './navigation/navbar/navbar.component';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,17 @@ import { HomeComponent } from './pages/home/home.component';
     IncomeComponent,
     ExpenseComponent,
     ReportComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

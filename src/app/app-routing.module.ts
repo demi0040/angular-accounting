@@ -8,10 +8,10 @@ import { ReportComponent } from './pages/report/report.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '/donor', component: DonorComponent },
-  { path: '/income', component: IncomeComponent },
-  { path: '/expense', component: ExpenseComponent },
-  { path: '/report', component: ReportComponent },
+  { path: 'donor', component: DonorComponent },
+  { path: 'income', component: IncomeComponent },
+  { path: 'expense', component: ExpenseComponent },
+  { path: 'report', component: ReportComponent },
 ];
 
 @NgModule({
