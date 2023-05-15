@@ -1,0 +1,71 @@
+{
+  "donors": [
+    {
+      "firstName": "Ihsan Yasir",
+      "lastName": "DEMIR",
+      "address": "144C Woodridge Crescent",
+      "postCode": "K2B7S9",
+      "phone": "8732881893",
+      "email": "demi0040@algonquinlive.com",
+      "area": 3,
+      "group": 4,
+      "promisedAmount": 13000,
+      "promisedDate": "2023-05-12T04:00:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "ali",
+      "lastName": "Demir",
+      "address": "875 Heron Road",
+      "postCode": "k1k1k1",
+      "phone": "33333",
+      "email": "yusr-game.2@outlook.com",
+      "area": 2,
+      "group": 4,
+      "promisedAmount": 4444,
+      "promisedDate": "2023-05-01T04:00:00.000Z",
+      "id": 4
+    },
+    {
+      "firstName": "Yusr",
+      "lastName": "Demir",
+      "address": "weffaefeaw",
+      "postCode": "eefe",
+      "phone": "55555",
+      "email": "yusr-game.2@outlook.com",
+      "area": 2,
+      "group": 3,
+      "promisedAmount": 53535,
+      "promisedDate": "2023-05-12T04:00:00.000Z",
+      "id": 6
+    },
+    {
+      "firstName": "veli",
+      "lastName": "veli",
+      "address": "123",
+      "postCode": "321",
+      "phone": "444",
+      "email": "veli",
+      "area": 2,
+      "group": 3,
+      "promisedAmount": 123,
+      "promisedDate": "2023-05-04T04:00:00.000Z",
+      "id": 8
+    },
+    {
+      "firstName": "Osman",
+      "lastName": "Kurunc",
+      "address": "adress sdf",
+      "postCode": "k1k1k1",
+      "phone": "4444444444",
+      "email": "okuru@ggmail.com",
+      "area": 1,
+      "group": 2,
+      "promisedAmount": 12000,
+      "promisedDate": "2023-05-05T04:00:00.000Z",
+      "id": 9
+    }
+  ],
+  "income": [],
+  "expenses": []
+}
