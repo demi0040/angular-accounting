@@ -14,19 +14,6 @@
       "id": 1
     },
     {
-      "firstName": "ali",
-      "lastName": "Demir",
-      "address": "875 Heron Road",
-      "postCode": "k1k1k1",
-      "phone": "33333",
-      "email": "yusr-game.2@outlook.com",
-      "area": 2,
-      "group": 4,
-      "promisedAmount": 4444,
-      "promisedDate": "2023-05-01T04:00:00.000Z",
-      "id": 4
-    },
-    {
       "firstName": "Yusr",
       "lastName": "Demir",
       "address": "weffaefeaw",
@@ -40,32 +27,95 @@
       "id": 6
     },
     {
-      "firstName": "veli",
-      "lastName": "veli",
-      "address": "123",
-      "postCode": "321",
-      "phone": "444",
-      "email": "veli",
+      "firstName": "someone",
+      "lastName": "somename",
+      "address": "asdf2134",
+      "postCode": "asd23",
+      "phone": "555 2234323",
+      "email": "somemail@mail.mail",
       "area": 2,
-      "group": 3,
-      "promisedAmount": 123,
-      "promisedDate": "2023-05-04T04:00:00.000Z",
-      "id": 8
+      "group": 2,
+      "promisedAmount": 30000,
+      "promisedDate": "2023-05-11T04:00:00.000Z",
+      "id": 10
     },
     {
-      "firstName": "Osman",
-      "lastName": "Kurunc",
-      "address": "adress sdf",
-      "postCode": "k1k1k1",
-      "phone": "4444444444",
-      "email": "okuru@ggmail.com",
+      "firstName": "Ali",
+      "lastName": "Alli",
+      "address": "weffaefeaw",
+      "postCode": "eefe",
+      "phone": "324 234",
+      "email": "ali@ali.com",
       "area": 1,
-      "group": 2,
-      "promisedAmount": 12000,
-      "promisedDate": "2023-05-05T04:00:00.000Z",
-      "id": 9
+      "group": 3,
+      "promisedAmount": 4234,
+      "promisedDate": "2023-05-04T04:00:00.000Z",
+      "id": 11
+    },
+    {
+      "firstName": "Songul",
+      "lastName": "Solmaz",
+      "address": "fasdf asd",
+      "postCode": "ffef2",
+      "phone": "234432",
+      "email": "solm@gam.gr",
+      "area": 2,
+      "group": 3,
+      "promisedAmount": 34355,
+      "promisedDate": "2023-05-19T04:00:00.000Z",
+      "id": 12
     }
   ],
-  "income": [],
+  "incomes": [
+    {
+      "category": "Donation",
+      "type": "Cash",
+      "amount": 1000,
+      "date": "2021-05-12T04:00:00.000Z",
+      "sourceName": "Ihsan Demir",
+      "donorID": 1,
+      "id": 1
+    },
+    {
+      "category": "Governmental",
+      "type": "Bank",
+      "sourceName": "CRA",
+      "amount": 123123,
+      "date": "2023-05-04T04:00:00.000Z",
+      "description": "fdsafasd fsad",
+      "donorID": "",
+      "id": 2
+    },
+    {
+      "category": "Governmental",
+      "type": "Bank",
+      "sourceName": "qwer",
+      "amount": 32342,
+      "date": "2023-05-13T04:00:00.000Z",
+      "description": "fasdfasd adsffdsa",
+      "donorID": "",
+      "id": 3
+    },
+    {
+      "category": "Donation",
+      "type": "Bank",
+      "sourceName": "",
+      "amount": 423423,
+      "date": "2023-04-14T04:00:00.000Z",
+      "description": "asdf asdf",
+      "donorID": "",
+      "id": 5
+    },
+    {
+      "category": "Donation",
+      "type": "Bank",
+      "sourceName": "Ali Alli",
+      "amount": 43242,
+      "date": "2023-05-03T04:00:00.000Z",
+      "description": "fewa sdf",
+      "donorID": 11,
+      "id": 6
+    }
+  ],
   "expenses": []
 }

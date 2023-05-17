@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackbarService } from 'src/app/core/snackbar.service';
+import { ConfirmationService } from 'src/app/core/confirmation.service';
 
 
 @Component({
@@ -24,8 +25,12 @@ export class DonorComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _dialog: MatDialog, private _donorService: DonorService,
-    private _snackbarService: SnackbarService) { }
+  constructor(
+    private _dialog: MatDialog,
+    private _donorService: DonorService,
+    private _snackbarService: SnackbarService,
+    private _confirmationService: ConfirmationService
+  ) { }
 
   ngOnInit(): void {
     this.getDonors();
@@ -55,16 +60,21 @@ export class DonorComponent implements OnInit {
   }
 
   deleteDonor(id: number) {
-    const confirmed = confirm('Are you sure you want to delete this donor?');
-    if (confirmed) {
-      this._donorService.deleteDonor(id).subscribe({
-        next: (res) => {
-          this._snackbarService.showSnackbar('Donor deleted successfully!', 'Success');
-          this.getDonors();
-        },
-        error: console.log,
+    const message = 'Are you sure you want to delete this donor?';
+
+    this._confirmationService.openConfirmDialog(message)
+      .then(result => {
+        if (result) {
+          // User confirmed the delete action
+          this._donorService.deleteDonor(id).subscribe({
+            next: (res) => {
+              this._snackbarService.showSnackbar('Donor deleted successfully!', 'Success');
+              this.getDonors();
+            },
+            error: console.log,
+          });
+        }
       });
-    }
   }
 
   openEditDialog(data: any) {

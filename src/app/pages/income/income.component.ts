@@ -1,10 +1,106 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { IncomeAddEditComponent } from './income-add-edit/income-add-edit.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DonorService } from 'src/app/services/donor.service';
+import { IncomeService } from 'src/app/services/income.service';
+import { SnackbarService } from 'src/app/core/snackbar.service';
+import { ConfirmationService } from 'src/app/core/confirmation.service';
 
 @Component({
   selector: 'app-income',
   templateUrl: './income.component.html',
   styleUrls: ['./income.component.scss']
 })
-export class IncomeComponent {
+export class IncomeComponent implements OnInit {
+
+  allColumns: string[] = ['id', 'category', 'type', 'amount', 'date', 'description', 'sourceName', 'action'];
+
+  displayedColumns: string[] = ['category', 'type', 'amount', 'date', 'description', 'action'];
+
+  dataSource!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(
+    private _dialog: MatDialog,
+    private _donorService: DonorService,
+    private _incomeService: IncomeService,
+    private _snackbarService: SnackbarService,
+    private _confirmationService: ConfirmationService
+  ) { }
+
+  ngOnInit(): void {
+    this.getIncome();
+  }
+
+  getIncome() {
+    this._incomeService.getIncomes().subscribe({
+      next: (res) => {
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      error: console.log,
+    })
+  }
+
+  openDialog() {
+    const dialogRef = this._dialog.open(IncomeAddEditComponent, {});
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getIncome();
+        }
+      }
+    });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  deleteIncome(income: any) {
+    const message = 'Are you sure you want to delete this Income?';
+
+    this._confirmationService.openConfirmDialog(message)
+      .then(result => {
+        if (result) {
+          console.log(income.id)
+          console.log(income)
+          // User confirmed the delete action
+          this._incomeService.deleteIncome(income.id).subscribe({
+            next: (res) => {
+              this._snackbarService.showSnackbar('Income deleted successfully!', 'Success');
+              this.getIncome();
+            },
+            error: console.log,
+          });
+        }
+      });
+  }
+
+  openEditDialog(data: any) {
+    const dialogRef = this._dialog.open(IncomeAddEditComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getIncome();
+        }
+      },
+    });
+  }
 
 }

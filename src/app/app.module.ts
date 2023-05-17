@@ -32,6 +32,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ConfirmationDialogComponent } from './core/confirmation-dialog/confirmation-dialog.component';
+import { IncomeAddEditComponent } from './pages/income/income-add-edit/income-add-edit.component';
+import { ExpenseAddEditComponent } from './pages/expense/expense-add-edit/expense-add-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     SidebarComponent,
     NavbarComponent,
-    DonorAddEditComponent
+    DonorAddEditComponent,
+    ConfirmationDialogComponent,
+    IncomeAddEditComponent,
+    ExpenseAddEditComponent
   ],
   imports: [
     BrowserModule,
