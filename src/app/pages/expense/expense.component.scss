@@ -1,0 +1,95 @@
+.spacer {
+    flex: 1;
+}
+
+.mat-toolbar {
+    background-color: #E8EAF6;
+    /* Set the background color */
+    color: #37474F;
+    /* Set the text color */
+    border-radius: 8px;
+    /* Add rounded corners */
+}
+
+.mat-toolbar span {
+    font-size: 20px;
+    /* Adjust the font size */
+}
+
+.mat-toolbar .spacer {
+    flex: 1;
+    /* Create space between elements */
+}
+
+.mat-toolbar button {
+    background-color: #4CAF50;
+    /* Set the button background color */
+    color: white;
+    /* Set the button text color */
+    margin-left: 10px;
+    /* Add margin to the left of the button */
+    border-radius: 4px;
+    /* Add rounded corners to the button */
+}
+
+.table-main {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 1248px;
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.action {
+    button {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.column-selector {
+    margin: 5px;
+    flex-grow: 1;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    mat-select {
+        width: 100%;
+    }
+}
+
+.column-selector {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    mat-select {
+        width: 100%;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    mat-select-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    mat-checkbox {
+        margin-bottom: 4px;
+    }
+
+    mat-option {
+        padding: 8px;
+    }
+
+    mat-option:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+}

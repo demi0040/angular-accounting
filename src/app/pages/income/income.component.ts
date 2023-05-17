@@ -77,7 +77,7 @@ export class IncomeComponent implements OnInit {
         if (result) {
           console.log(income.id)
           console.log(income)
-          // User confirmed the delete action
+
           this._incomeService.deleteIncome(income.id).subscribe({
             next: (res) => {
               this._snackbarService.showSnackbar('Income deleted successfully!', 'Success');

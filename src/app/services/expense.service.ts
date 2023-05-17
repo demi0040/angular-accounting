@@ -17,7 +17,7 @@ export class ExpenseService {
     return this._http.put(`http://localhost:3000/expenses/${id}`, expense);
   }
 
-  getExpense(): Observable<any> {
+  getExpenses(): Observable<any> {
     return this._http.get('http://localhost:3000/expenses');
   }
 

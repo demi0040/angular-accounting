@@ -117,5 +117,16 @@
       "id": 6
     }
   ],
-  "expenses": []
+  "expenses": [
+    {
+      "expenseName": "Cleaning",
+      "paymentMethod": "Bank",
+      "expenseCategory": "Services",
+      "payeeInformation": "Cleaning Company",
+      "expenseAmount": 200,
+      "expenseDate": "2023-05-18T04:00:00.000Z",
+      "expenseDescription": "",
+      "id": 1
+    }
+  ]
 }
