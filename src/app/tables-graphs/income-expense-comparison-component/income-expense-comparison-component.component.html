@@ -1,1 +1,6 @@
-<p>income-expense-comparison-component works!</p>
+<div class="chart-container">
+    <canvas class="chart" baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType"
+        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+<button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>

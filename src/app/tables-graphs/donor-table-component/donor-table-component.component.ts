@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DonorService } from 'src/app/services/donor.service';
+import { DonorDifferenceService } from '../services/donor-difference.service';
 
 @Component({
   selector: 'app-donor-table-component',
@@ -11,9 +11,9 @@ import { DonorService } from 'src/app/services/donor.service';
 })
 export class DonorTableComponentComponent implements OnInit {
 
-  allColumns: string[] = ['id', 'first_name', 'last_name', 'email', 'phone', 'address', 'postcode', 'donor_area', 'donor_group', 'promised_amount', 'promised_date'];
+  allColumns: string[] = ['id', 'first_name', 'last_name', 'email', 'phone', 'address', 'postcode', 'donor_area', 'donor_group', 'promised_amount', 'promised_date', 'total_actual_income', 'difference'];
 
-  displayedColumns: string[] = ['first_name', 'last_name', 'donor_area', 'donor_group', 'promised_amount'];
+  displayedColumns: string[] = ['first_name', 'last_name', 'donor_area', 'donor_group', 'promised_amount', 'total_actual_income', 'difference'];
 
   dataSource!: MatTableDataSource<any>;
 
@@ -21,7 +21,7 @@ export class DonorTableComponentComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private _donorService: DonorService,
+    private _donorDifferenceService: DonorDifferenceService,
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class DonorTableComponentComponent implements OnInit {
   }
 
   getDonors() {
-    this._donorService.getDonors().subscribe({
+    this._donorDifferenceService.getDonors().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;

@@ -1,32 +1,32 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { MonthlyIncomeService } from '../services/monthly-income.service';
+import { MonthlyDonationsService } from '../services/monthly-donations.service';
 
 @Component({
-  selector: 'app-income-chart-component',
-  templateUrl: './income-chart-component.component.html',
-  styleUrls: ['./income-chart-component.component.scss']
+  selector: 'app-donation-chart-component',
+  templateUrl: './donation-chart-component.component.html',
+  styleUrls: ['./donation-chart-component.component.scss']
 })
-export class IncomeChartComponentComponent implements OnInit {
+export class DonationChartComponentComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-  private monthlyIncomeData: number[] = [];
+  private monthlyDonationData: number[] = [];
 
-  constructor(private _monthlyIncomeService: MonthlyIncomeService) { }
+  constructor(private _monthlyDonationService: MonthlyDonationsService) { }
 
   ngOnInit(): void {
-    this.getMonthlyIncome();
+    this.getMonthlyDonation();
   }
 
-  getMonthlyIncome() {
-    this._monthlyIncomeService.getMonthlyIncomes().subscribe(data => {
+  getMonthlyDonation() {
+    this._monthlyDonationService.getMonthlyDonations().subscribe(data => {
 
-      data.forEach((income: { month: Date; total_income: number; }) => {
+      data.forEach((donation: { month: Date; total_donations: number; }) => {
 
-        const date = new Date(income.month);
+        const date = new Date(donation.month);
         const month = date.getMonth();
 
-        this.monthlyIncomeData[month] = income.total_income;
+        this.monthlyDonationData[month] = donation.total_donations;
       });
       this.randomize();
     });
@@ -53,7 +53,7 @@ export class IncomeChartComponentComponent implements OnInit {
   public barChartData: ChartData<'line'> = {
     labels: this.barChartLabels,
     datasets: [
-      { data: this.monthlyIncomeData, label: 'Incomes' }
+      { data: this.monthlyDonationData, label: 'Incomes' }
     ]
   };
 
@@ -69,5 +69,4 @@ export class IncomeChartComponentComponent implements OnInit {
   public randomize(): void {
     this.barChartType = this.barChartType === 'bar' ? 'line' : 'bar';
   }
-
 }

@@ -32,3 +32,18 @@ table {
 .mat-paginator {
     width: 100%;
 }
+
+.table-container {
+
+    /* Set a background color for odd rows */
+    .mat-row:nth-child(odd) {
+        background-color: #f5f5f5;
+        /* Adjust the color as desired */
+    }
+
+    /* Set a background color for even rows */
+    .mat-row:nth-child(even) {
+        background-color: #e0e0e0;
+        /* Adjust the color as desired */
+    }
+}

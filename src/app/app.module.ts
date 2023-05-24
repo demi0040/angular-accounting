@@ -44,6 +44,9 @@ import { ExpenseChartComponentComponent } from './tables-graphs/expense-chart-co
 import { IncomeChartComponentComponent } from './tables-graphs/income-chart-component/income-chart-component.component';
 import { IncomeExpenseComparisonComponentComponent } from './tables-graphs/income-expense-comparison-component/income-expense-comparison-component.component';
 
+import { NgChartsModule } from 'ng2-charts';
+import { DonationChartComponentComponent } from './tables-graphs/donation-chart-component/donation-chart-component.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,8 @@ import { IncomeExpenseComparisonComponentComponent } from './tables-graphs/incom
     ExpenseTableComponentComponent,
     ExpenseChartComponentComponent,
     IncomeChartComponentComponent,
-    IncomeExpenseComparisonComponentComponent
+    IncomeExpenseComparisonComponentComponent,
+    DonationChartComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +93,7 @@ import { IncomeExpenseComparisonComponentComponent } from './tables-graphs/incom
     MatCheckboxModule,
     MatSnackBarModule,
     MatGridListModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
