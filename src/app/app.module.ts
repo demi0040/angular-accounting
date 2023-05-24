@@ -32,9 +32,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 import { ConfirmationDialogComponent } from './core/confirmation-dialog/confirmation-dialog.component';
 import { IncomeAddEditComponent } from './pages/income/income-add-edit/income-add-edit.component';
 import { ExpenseAddEditComponent } from './pages/expense/expense-add-edit/expense-add-edit.component';
+import { DonorTableComponentComponent } from './tables-graphs/donor-table-component/donor-table-component.component';
+import { IncomeTableComponentComponent } from './tables-graphs/income-table-component/income-table-component.component';
+import { ExpenseTableComponentComponent } from './tables-graphs/expense-table-component/expense-table-component.component';
+import { ExpenseChartComponentComponent } from './tables-graphs/expense-chart-component/expense-chart-component.component';
+import { IncomeChartComponentComponent } from './tables-graphs/income-chart-component/income-chart-component.component';
+import { IncomeExpenseComparisonComponentComponent } from './tables-graphs/income-expense-comparison-component/income-expense-comparison-component.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +57,13 @@ import { ExpenseAddEditComponent } from './pages/expense/expense-add-edit/expens
     DonorAddEditComponent,
     ConfirmationDialogComponent,
     IncomeAddEditComponent,
-    ExpenseAddEditComponent
+    ExpenseAddEditComponent,
+    DonorTableComponentComponent,
+    IncomeTableComponentComponent,
+    ExpenseTableComponentComponent,
+    ExpenseChartComponentComponent,
+    IncomeChartComponentComponent,
+    IncomeExpenseComparisonComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +88,7 @@ import { ExpenseAddEditComponent } from './pages/expense/expense-add-edit/expens
     MatListModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

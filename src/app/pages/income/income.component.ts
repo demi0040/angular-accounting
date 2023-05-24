@@ -16,9 +16,9 @@ import { ConfirmationService } from 'src/app/core/confirmation.service';
 })
 export class IncomeComponent implements OnInit {
 
-  allColumns: string[] = ['id', 'category', 'type', 'amount', 'date', 'description', 'sourceName', 'action'];
+  allColumns: string[] = ['id', 'income_category', 'payment_method', 'income_amount', 'income_date', 'description', 'income_source_name', 'action'];
 
-  displayedColumns: string[] = ['category', 'type', 'amount', 'date', 'description', 'action'];
+  displayedColumns: string[] = ['income_category', 'payment_method', 'income_amount', 'income_date', 'income_source_name', 'description', 'action'];
 
   dataSource!: MatTableDataSource<any>;
 

@@ -20,16 +20,16 @@ export class DonorAddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.donorForm = this._fb.group({
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       address: '',
-      postCode: '',
+      postcode: '',
       phone: '',
       email: '',
-      area: '',
-      group: '',
-      promisedAmount: '',
-      promisedDate: '',
+      donor_area: '',
+      donor_group: '',
+      promised_amount: '',
+      promised_date: '',
     });
   }
 

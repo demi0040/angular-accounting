@@ -28,13 +28,13 @@ export class IncomeAddEditComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.incomeForm = this._fb.group({
-      category: '',
-      type: '',
-      sourceName: '',
-      amount: '',
-      date: '',
+      income_category: '',
+      payment_method: '',
+      income_source_name: '',
+      income_amount: '',
+      income_date: '',
       description: '',
-      donorID: '',
+      donor_id: '',
     });
   }
 

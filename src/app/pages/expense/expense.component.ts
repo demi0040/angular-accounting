@@ -15,9 +15,9 @@ import { ExpenseAddEditComponent } from './expense-add-edit/expense-add-edit.com
 })
 export class ExpenseComponent implements OnInit {
 
-  allColumns: string[] = ['id', 'expenseName', 'paymentMethod', 'expenseCategory', 'payeeInformation', 'expenseAmount', 'expenseDate', 'expenseDescription', 'action'];
+  allColumns: string[] = ['id', 'expense_name', 'payment_method', 'expense_category', 'payee_information', 'expense_amount', 'expense_date', 'expense_description', 'action'];
 
-  displayedColumns: string[] = ['expenseName', 'paymentMethod', 'expenseCategory', 'payeeInformation', 'expenseAmount', 'expenseDate', 'action'];
+  displayedColumns: string[] = ['expense_name', 'payment_method', 'expense_category', 'payee_information', 'expense_amount', 'expense_date', 'action'];
 
   dataSource!: MatTableDataSource<any>;
 

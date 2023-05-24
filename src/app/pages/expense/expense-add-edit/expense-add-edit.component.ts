@@ -20,13 +20,13 @@ export class ExpenseAddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.expenseForm = this._fb.group({
-      expenseName: '',
-      paymentMethod: '',
-      expenseCategory: '',
-      payeeInformation: '',
-      expenseAmount: '',
-      expenseDate: '',
-      expenseDescription: '',
+      expense_name: '',
+      payment_method: '',
+      expense_category: '',
+      payee_information: '',
+      expense_amount: '',
+      expense_date: '',
+      expense_description: '',
     });
   }
 

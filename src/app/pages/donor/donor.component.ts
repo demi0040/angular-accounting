@@ -16,9 +16,9 @@ import { ConfirmationService } from 'src/app/core/confirmation.service';
 })
 export class DonorComponent implements OnInit {
 
-  allColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'phone', 'address', 'postCode', 'area', 'group', 'promisedAmount', 'promisedDate', 'action'];
+  allColumns: string[] = ['id', 'first_name', 'last_name', 'email', 'phone', 'address', 'postcode', 'donor_area', 'donor_group', 'promised_amount', 'promised_date', 'action'];
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'phone', 'area', 'group', 'promisedAmount', 'promisedDate', 'action'];
+  displayedColumns: string[] = ['first_name', 'last_name', 'phone', 'donor_area', 'donor_group', 'promised_amount', 'promised_date', 'action'];
 
   dataSource!: MatTableDataSource<any>;
 
