@@ -4,26 +4,21 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 1px;
-
     .column-selector,
     .filter-field {
         flex: 3;
         display: flex;
         align-items: center;
         margin-right: 16px;
-
         mat-form-field {
             width: 100%;
-
             // Optional: Increase padding for more space
             padding: 0 8px;
-
             mat-select {
                 font-size: 14px;
             }
         }
     }
-
     .add-button {
         display: flex;
         flex: 1;
@@ -35,8 +30,7 @@
 .table-main {
     padding-top: 20px;
     margin: 0 auto;
-    max-width: 1248px;
-
+    max-width: auto;
     mat-form-field {
         width: 100%;
     }
@@ -54,13 +48,11 @@ td {
 }
 
 .table-container {
-
     /* Set a background color for odd rows */
     .mat-row:nth-child(odd) {
         background-color: #f5f5f5;
         /* Adjust the color as desired */
     }
-
     /* Set a background color for even rows */
     .mat-row:nth-child(even) {
         background-color: #e0e0e0;
