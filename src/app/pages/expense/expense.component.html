@@ -1,11 +1,5 @@
-<mat-toolbar>
-    <span>Expense Page</span>
-    <span class="spacer"></span>
-    <button mat-raised-button (click)="openDialog()">Add Expense</button>
-</mat-toolbar>
-
-<div class="column-selector">
-    <mat-form-field>
+<div class="toolbar">
+    <mat-form-field appearance="outline" class="column-selector">
         <mat-label>Select Columns</mat-label>
         <mat-select [(ngModel)]="displayedColumns" multiple>
             <mat-select-trigger>
@@ -18,13 +12,16 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
-</div>
 
-<div class="table-main">
-    <mat-form-field>
+    <mat-form-field appearance="outline" class="filter-field">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
     </mat-form-field>
+
+    <button mat-raised-button (click)="openDialog()" class="add-button" color="primary">Add Expense</button>
+</div>
+
+<div class="table-main">
 
     <div class="table-container">
         <table mat-table [dataSource]="dataSource" matSort>

@@ -7,6 +7,7 @@ import { ConfirmationService } from 'src/app/core/confirmation.service';
 import { SnackbarService } from 'src/app/core/snackbar.service';
 import { ExpenseService } from 'src/app/services/expense.service';
 import { ExpenseAddEditComponent } from './expense-add-edit/expense-add-edit.component';
+import { PageTitleService } from 'src/app/services/page-title.service';
 
 @Component({
   selector: 'app-expense',
@@ -28,8 +29,16 @@ export class ExpenseComponent implements OnInit {
     private _dialog: MatDialog,
     private _expenseService: ExpenseService,
     private _snackbarService: SnackbarService,
-    private _confirmationService: ConfirmationService
-  ) { }
+    private _confirmationService: ConfirmationService,
+    private _pageTitleService: PageTitleService
+  ) {
+    this.updatePageTitle();
+  }
+
+  updatePageTitle(): void {
+    const newTitle = 'Expenses Page'; // Set the desired page title
+    this._pageTitleService.setPageTitle(newTitle);
+  }
 
   ngOnInit(): void {
     this.getExpenses();

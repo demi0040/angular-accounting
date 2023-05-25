@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackbarService } from 'src/app/core/snackbar.service';
 import { ConfirmationService } from 'src/app/core/confirmation.service';
+import { PageTitleService } from 'src/app/services/page-title.service';
 
 
 @Component({
@@ -29,8 +30,16 @@ export class DonorComponent implements OnInit {
     private _dialog: MatDialog,
     private _donorService: DonorService,
     private _snackbarService: SnackbarService,
-    private _confirmationService: ConfirmationService
-  ) { }
+    private _confirmationService: ConfirmationService,
+    private _pageTitleService: PageTitleService
+  ) {
+    this.updatePageTitle();
+  }
+
+  updatePageTitle(): void {
+    const newTitle = 'Donors Page'; // Set the desired page title
+    this._pageTitleService.setPageTitle(newTitle);
+  }
 
   ngOnInit(): void {
     this.getDonors();

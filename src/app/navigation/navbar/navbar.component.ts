@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PageTitleService } from 'src/app/services/page-title.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private pageTitleService: PageTitleService) { }
+
+  getPageTitle(): string {
+    return this.pageTitleService.getPageTitle();
+  }
 }

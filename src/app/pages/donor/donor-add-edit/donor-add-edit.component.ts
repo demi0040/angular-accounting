@@ -31,6 +31,7 @@ export class DonorAddEditComponent implements OnInit {
       promised_amount: '',
       promised_date: '',
     });
+
   }
 
   ngOnInit(): void {

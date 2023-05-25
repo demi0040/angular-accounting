@@ -8,6 +8,7 @@ import { DonorService } from 'src/app/services/donor.service';
 import { IncomeService } from 'src/app/services/income.service';
 import { SnackbarService } from 'src/app/core/snackbar.service';
 import { ConfirmationService } from 'src/app/core/confirmation.service';
+import { PageTitleService } from 'src/app/services/page-title.service';
 
 @Component({
   selector: 'app-income',
@@ -30,8 +31,16 @@ export class IncomeComponent implements OnInit {
     private _donorService: DonorService,
     private _incomeService: IncomeService,
     private _snackbarService: SnackbarService,
-    private _confirmationService: ConfirmationService
-  ) { }
+    private _confirmationService: ConfirmationService,
+    private _pageTitleService: PageTitleService
+  ) {
+    this.updatePageTitle();
+  }
+
+  updatePageTitle(): void {
+    const newTitle = 'Income Page'; // Set the desired page title
+    this._pageTitleService.setPageTitle(newTitle);
+  }
 
   ngOnInit(): void {
     this.getIncome();
